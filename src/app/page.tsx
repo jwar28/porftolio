@@ -6,6 +6,8 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { DATA } from '@/data/resume'
 import Link from 'next/link'
+import ShimmerButton from '../components/magicui/shimmer-button'
+import { ChevronRightIcon } from 'lucide-react'
 
 const BLUR_FADE_DELAY = 0.04
 
@@ -101,7 +103,6 @@ export default function Page() {
                   key={project.title}
                   title={project.title}
                   description={project.description}
-                  dates={project.dates}
                   tags={project.technologies}
                   image={project.image}
                   video={project.video}
@@ -110,6 +111,18 @@ export default function Page() {
               </BlurFade>
             ))}
           </div>
+          <BlurFade delay={BLUR_FADE_DELAY * 14}>
+            <div className='flex justify-center items-center'>
+              <Link href='/projects'>
+                <ShimmerButton className='shadow-2xl'>
+                  <span className='whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10'>
+                    See all projects
+                  </span>
+                  <ChevronRightIcon className='ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 dark:text-white' />
+                </ShimmerButton>
+              </Link>
+            </div>
+          </BlurFade>
         </div>
       </section>
       <section id='contact'>
