@@ -1,17 +1,17 @@
-import BlurFade from "@/components/magicui/blur-fade";
-import { ResumeCard } from "@/components/resume-card";
-import { DATA } from "@/data/resume";
-import Link from "next/link";
+import BlurFade from '@/components/magicui/blur-fade'
+import { ResumeCard } from '@/components/resume-card'
+import { DATA } from '@/data/resume'
+import Link from 'next/link'
 
-const BLUR_FADE_DELAY = 0.04;
+const BLUR_FADE_DELAY = 0.04
 
-export default async function AboutMePage(){
-    return (
-        <BlurFade delay={BLUR_FADE_DELAY}>
-            <section id="education">
-        <div className="flex min-h-0 flex-col gap-y-3">
+export default function AboutMePage() {
+  return (
+    <BlurFade delay={BLUR_FADE_DELAY}>
+      <section id='education'>
+        <div className='flex min-h-0 flex-col gap-y-3'>
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
-            <h2 className="text-xl font-bold">Education</h2>
+            <h2 className='text-xl font-bold'>Education</h2>
           </BlurFade>
           {DATA.education.map((education, id) => (
             <BlurFade
@@ -31,6 +31,6 @@ export default async function AboutMePage(){
           ))}
         </div>
       </section>
-        </BlurFade>
-    )
+    </BlurFade>
+  )
 }

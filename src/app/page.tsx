@@ -11,6 +11,8 @@ import { ChevronRightIcon } from 'lucide-react'
 
 const BLUR_FADE_DELAY = 0.04
 
+const featuredProjects = DATA.projects.filter(project => project.isFeatured)
+
 export default function Page() {
   return (
     <main className='flex flex-col min-h-[100dvh] space-y-10'>
@@ -83,7 +85,7 @@ export default function Page() {
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
             <div className='flex flex-col items-center justify-center space-y-4'>
               <div className='space-y-2'>
-                <div className='text-xl font-bold'>My Projects</div>
+                <div className='text-xl font-bold'>Featured Projects</div>
                 <p className='text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
                   I&apos;ve worked on a variety of projects, from simple
                   websites to complex web applications. Here are a few of my
@@ -93,7 +95,7 @@ export default function Page() {
             </div>
           </BlurFade>
           <div className='grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto'>
-            {DATA.projects.map((project, id) => (
+            {featuredProjects.map((project, id) => (
               <BlurFade
                 key={project.title}
                 delay={BLUR_FADE_DELAY * 12 + id * 0.05}
