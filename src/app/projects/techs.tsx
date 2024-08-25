@@ -20,8 +20,12 @@ export const TECHS = [
     label: 'Python',
   },
   {
-    value: 'Typescript',
-    label: 'Typescript',
+    value: 'TypeScript',
+    label: 'TypeScript',
+  },
+  {
+    value: 'JavaScript',
+    label: 'JavaScript',
   },
   {
     value: 'C#',
