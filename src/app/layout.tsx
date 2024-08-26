@@ -19,6 +19,16 @@ export const metadata: Metadata = {
     default: DATA.name,
     template: `%s | ${DATA.name}`,
   },
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Javier Guerra Portofolio',
+    // startUpImage: [],
+  },
+  formatDetection: {
+    telephone: false,
+  },
   description: DATA.description,
   openGraph: {
     title: `${DATA.name}`,
