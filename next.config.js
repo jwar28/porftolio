@@ -6,9 +6,6 @@ const withPWA = require('@ducanh2912/next-pwa').default({
   reloadOnOnline: true,
   swcMinify: true,
   dest: 'public',
-  fallbacks: {
-    document: '/offline',
-  },
   workboxOptions: {
     disableDevLogs: true,
   },
