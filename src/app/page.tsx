@@ -56,7 +56,7 @@ export default function Page() {
         </div>
       </section>
       <section id='work'>
-        <div className='flex min-h-0 flex-col gap-y-3 py-12'>
+        <div className='flex min-h-0 flex-col gap-y-3'>
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
             <h2 className='text-xl font-bold'>Work Experience</h2>
           </BlurFade>
@@ -75,6 +75,29 @@ export default function Page() {
                 badges={work.badges}
                 period={`${work.start} - ${work.end ?? 'Present'}`}
                 description={work.description}
+              />
+            </BlurFade>
+          ))}
+        </div>
+      </section>
+      <section id='education'>
+        <div className='flex min-h-0 flex-col gap-y-3'>
+          <BlurFade delay={BLUR_FADE_DELAY * 6}>
+            <h2 className='text-xl font-bold'>Education</h2>
+          </BlurFade>
+          {DATA.education.map((education, id) => (
+            <BlurFade
+              key={education.school}
+              delay={BLUR_FADE_DELAY * 7 + id * 0.05}
+            >
+              <ResumeCard
+                key={education.school}
+                href={education.href}
+                logoUrl={education.logoUrl}
+                altText={education.school}
+                title={education.school}
+                subtitle={education.degree}
+                period={`${education.start} - ${education.end}`}
               />
             </BlurFade>
           ))}
