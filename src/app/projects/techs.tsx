@@ -12,7 +12,7 @@ export const TECHS = [
     label: 'React Native',
   },
   {
-    value: 'Sveltekit',
+    value: 'SvelteKit',
     label: 'SvelteKit',
   },
   {
