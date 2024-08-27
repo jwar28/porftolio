@@ -100,7 +100,7 @@ export const DATA = {
       degree: 'Systems Engineering',
       logoUrl: '/unab.jpg',
       start: '2023',
-      end: 'Present',
+      end: 'Now',
     },
   ],
   projects: [
