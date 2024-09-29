@@ -298,5 +298,28 @@ export const DATA = {
       image: '/xd3.gif',
       video: '',
     },
+    {
+      title: 'Gestión Documental Web',
+      href: 'https://github.com/jwar28/gestion-documental-web',
+      active: true,
+      description: 'Informative page for Document management technology',
+      technologies: ['Astro', 'React'],
+      category: 'Web development',
+      isFeatured: false,
+      links: [
+        {
+          type: 'Website',
+          href: 'https://gestion-documental-web.vercel.app/',
+          icon: <Icons.globe className='size-3' />,
+        },
+        {
+          type: 'Source',
+          href: 'https://github.com/cursedshadow1234/Cursed-Shadow',
+          icon: <Icons.github className='size-3' />,
+        },
+      ],
+      image: '/gweb.png',
+      video: '',
+    },
   ],
 } as const
