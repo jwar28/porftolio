@@ -31,4 +31,12 @@ export const TECHS = [
     value: 'C#',
     label: 'C#',
   },
+  {
+    value: 'Next.js',
+    label: 'Next.js',
+  },
+  {
+    value: 'AI',
+    label: 'AI',
+  },
 ]

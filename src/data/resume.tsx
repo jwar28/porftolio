@@ -125,7 +125,7 @@ export const DATA = {
           icon: <Icons.github className='size-3' />,
         },
       ],
-      image: '/gweb/logo.png',
+      images: ['/gweb/logo.png', '/gweb/gweb.png'],
       video: '',
     },
     {
@@ -153,7 +153,7 @@ export const DATA = {
           icon: <Icons.github className='size-3' />,
         },
       ],
-      image: '/emofind/logo.png',
+      images: ['/emofind/logo.png', '/emofind/main.png'],
       video: '',
     },
     {
@@ -171,7 +171,7 @@ export const DATA = {
           icon: <Icons.github className='size-3' />,
         },
       ],
-      image: '/nextxtailwind/logo.png',
+      images: ['/nextxtailwind/logo.png'],
       video: '',
     },
     {
@@ -194,7 +194,7 @@ export const DATA = {
           icon: <Icons.github className='size-3' />,
         },
       ],
-      image: '/unabcess/logo.png',
+      images: ['/unabcess/logo.png', '/unabcess/dashboard.png', '/unabcess/login.png', '/unabcess/not.png'],
       video: '',
     },
     {
@@ -218,7 +218,7 @@ export const DATA = {
           icon: <Icons.github className='size-3' />,
         },
       ],
-      image: '/pokepedia/logo.png',
+      images: ['/pokepedia/logo.png', '/pokepedia/pokepedia.png'],
       video: '',
     },
     {
@@ -241,7 +241,7 @@ export const DATA = {
           icon: <Icons.github className='size-3' />,
         },
       ],
-      image: '/luna-llena/logo.png',
+      images: ['/luna-llena/logo.png', '/luna-llena/luna-llena.png'],
       video: '',
     },
     {
@@ -264,7 +264,7 @@ export const DATA = {
           icon: <Icons.github className='size-3' />,
         },
       ],
-      image: '/tf.png',
+      images: ['/tf.png'],
       video: '',
     },
     {
@@ -287,7 +287,7 @@ export const DATA = {
           icon: <Icons.github className='size-3' />,
         },
       ],
-      image: '/rocky.png',
+      images: ['/rocky.png'],
       video: '',
     },
     {
@@ -306,7 +306,7 @@ export const DATA = {
           icon: <Icons.github className='size-3' />,
         },
       ],
-      image: '/xd.gif',
+      images: ['/xd.gif'],
       video: '',
     },
     {
@@ -329,7 +329,7 @@ export const DATA = {
           icon: <Icons.github className='size-3' />,
         },
       ],
-      image: '/control-stock.png',
+      images: ['/control-stock.png'],
       video: '',
     },
     {
@@ -352,7 +352,7 @@ export const DATA = {
           icon: <Icons.github className='size-3' />,
         },
       ],
-      image: '/unab-space.png',
+      images: ['/unab-space.png'],
       video: '',
     },
     {
@@ -370,7 +370,7 @@ export const DATA = {
           icon: <Icons.github className='size-3' />,
         },
       ],
-      image: '/xd2.gif',
+      images: ['/xd2.gif'],
       video: '',
     },
     {
@@ -388,7 +388,7 @@ export const DATA = {
           icon: <Icons.github className='size-3' />,
         },
       ],
-      image: '/xd3.gif',
+      images: ['/xd3.gif'],
       video: '',
     },
   ],

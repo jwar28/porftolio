@@ -51,7 +51,7 @@ export default function ProjectsPage() {
                 title={project.title}
                 description={project.description}
                 tags={project.technologies}
-                image={project.image}
+                images={project.images}
                 video={project.video}
                 links={project.links}
               />
