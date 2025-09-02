@@ -59,13 +59,25 @@ export function ProjectCard({
           />
         )}
         {image && (
-          <Image
-            src={image}
-            alt={title}
-            width={500}
-            height={300}
-            className='h-40 w-full overflow-hidden object-cover object-top'
-          />
+            image.toLowerCase().includes('logo') ? (
+              <div className="flex items-center justify-center h-40 w-full bg-white">
+                <Image
+                  src={image}
+                  alt={title}
+                  width={600}
+                  height={160}
+                  className="object-contain h-28 w-full px-4"
+                />
+              </div>
+            ) : (
+              <Image
+                src={image}
+                alt={title}
+                width={500}
+                height={300}
+                className="h-40 w-full overflow-hidden object-cover object-top"
+              />
+            )
         )}
       </Link>
       <CardHeader className='px-2'>

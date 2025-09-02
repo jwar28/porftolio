@@ -1,5 +1,5 @@
 import { Icons } from '@/components/icons'
-import { HomeIcon, ComputerIcon, UserIcon, FileText } from 'lucide-react'
+import { ComputerIcon, FileText, HomeIcon } from 'lucide-react'
 
 export const DATA = {
   name: 'Javier Guerra',
@@ -18,6 +18,7 @@ export const DATA = {
     'Typescript',
     'Node.js',
     'Python',
+    'Docker',
     'Oracle Apex',
     'Postgres',
     'Mongo',
@@ -105,6 +106,98 @@ export const DATA = {
   ],
   projects: [
     {
+      title: 'Gestión Documental Web',
+      href: 'https://github.com/jwar28/gestion-documental-web',
+      active: true,
+      description: 'Informative page for Document management technology',
+      technologies: ['Astro', 'React'],
+      category: 'Web development',
+      isFeatured: true,
+      links: [
+        {
+          type: 'Website',
+          href: 'https://gestion-documental-web.vercel.app/',
+          icon: <Icons.globe className='size-3' />,
+        },
+        {
+          type: 'Source',
+          href: 'https://github.com/cursedshadow1234/Cursed-Shadow',
+          icon: <Icons.github className='size-3' />,
+        },
+      ],
+      image: '/gweb/logo.png',
+      video: '',
+    },
+    {
+      title: 'Emofind',
+      href: 'https://github.com/jwar28/emofind.web',
+      active: true,
+      description: 'An AI-powered app leveraging neural networks and LLMs to analyze and identify the overall sentiment of a given text',
+      technologies: ['Next.js', 'Tailwind CSS', 'AI'],
+      category: 'Artificial Intelligence',
+      isFeatured: true,
+      links: [
+        {
+          type: 'Source',
+          href: 'https://github.com/jwar28/emofind.web',
+          icon: <Icons.github className='size-3' />,
+        },
+        {
+          type: 'Api',
+          href: 'https://github.com/nibbengineers/emofind.api',
+          icon: <Icons.github className='size-3' />,
+        },
+        {
+          type: 'Mobile',
+          href: 'https://github.com/jwar28/emofind-mobile',
+          icon: <Icons.github className='size-3' />,
+        },
+      ],
+      image: '/emofind/logo.png',
+      video: '',
+    },
+    {
+      title: 'Next X Tailwind',
+      href: 'https://github.com/jwar28/next-x-tailwind',
+      active: true,
+      description: 'Custom template for quickly bootstrapping web applications using Next.js and Tailwind CSS.',
+      technologies: ['Template','Next.js', 'Tailwind CSS'],
+      category: 'Web development',
+      isFeatured: false,
+      links: [
+        {
+          type: 'Source',
+          href: 'https://github.com/jwar28/next-x-tailwind',
+          icon: <Icons.github className='size-3' />,
+        },
+      ],
+      image: '/nextxtailwind/logo.png',
+      video: '',
+    },
+    {
+      title: 'Unabcess',
+      href: 'https://github.com/jwar28/unabccess',
+      active: true,
+      description: 'User-friendly software for managing space reservations and access control at Universidad Autónoma de Bucaramanga (UNAB)',
+      technologies: ['Next.js', 'Firebase'],
+      category: 'Web development',
+      isFeatured: true,
+      links: [
+        {
+          type: 'Website',
+          href: 'https://unabccess.vercel.app/',
+          icon: <Icons.globe className='size-3' />,
+        },
+        {
+          type: 'Source',
+          href: 'https://github.com/jwar28/unabccess',
+          icon: <Icons.github className='size-3' />,
+        },
+      ],
+      image: '/unabcess/logo.png',
+      video: '',
+    },
+    {
       title: 'Pokepedia',
       href: 'https://pokepedia-six.vercel.app/',
       active: true,
@@ -125,7 +218,30 @@ export const DATA = {
           icon: <Icons.github className='size-3' />,
         },
       ],
-      image: '/pokepedia.png',
+      image: '/pokepedia/logo.png',
+      video: '',
+    },
+    {
+      title: 'Luna llena',
+      href: 'https://luna-llena-three.vercel.app/',
+      active: true,
+      description: 'Static web page for client',
+      technologies: ['Astro', 'TailwindCSS'],
+      category: 'Web Development',
+      isFeatured: false,
+      links: [
+        {
+          type: 'Website',
+          href: 'https://luna-llena-three.vercel.app/',
+          icon: <Icons.globe className='size-3' />,
+        },
+        {
+          type: 'Source',
+          href: 'https://luna-llena-three.vercel.app/',
+          icon: <Icons.github className='size-3' />,
+        },
+      ],
+      image: '/luna-llena/logo.png',
       video: '',
     },
     {
@@ -135,7 +251,7 @@ export const DATA = {
       description: 'Static page made for a tech fix company',
       technologies: ['Astro', 'TailwindCSS', 'React'],
       category: 'Web Development',
-      isFeatured: true,
+      isFeatured: false,
       links: [
         {
           type: 'Website',
@@ -156,9 +272,9 @@ export const DATA = {
       href: 'https://rocky-q71s.onrender.com/',
       active: true,
       description: 'Movie recommender system using collaborative filtering',
-      technologies: ['Python', 'Streamlit', 'Machine Learning'],
+      technologies: ['Python', 'Streamlit', 'AI'],
       category: 'Artificial Intelligence',
-      isFeatured: true,
+      isFeatured: false,
       links: [
         {
           type: 'Website',
@@ -182,7 +298,7 @@ export const DATA = {
         'Mobile app to keep track of your university grades and other information',
       technologies: ['React Native', 'Expo', 'Nativewind'],
       category: 'Mobile Development',
-      isFeatured: true,
+      isFeatured: false,
       links: [
         {
           type: 'Source',
@@ -191,29 +307,6 @@ export const DATA = {
         },
       ],
       image: '/xd.gif',
-      video: '',
-    },
-    {
-      title: 'Luna llena',
-      href: 'https://luna-llena-three.vercel.app/',
-      active: true,
-      description: 'Static web page for client',
-      technologies: ['Astro', 'TailwindCSS'],
-      category: 'Web Development',
-      isFeatured: false,
-      links: [
-        {
-          type: 'Website',
-          href: 'https://luna-llena-three.vercel.app/',
-          icon: <Icons.globe className='size-3' />,
-        },
-        {
-          type: 'Source',
-          href: 'https://luna-llena-three.vercel.app/',
-          icon: <Icons.github className='size-3' />,
-        },
-      ],
-      image: '/luna-llena.png',
       video: '',
     },
     {
@@ -296,29 +389,6 @@ export const DATA = {
         },
       ],
       image: '/xd3.gif',
-      video: '',
-    },
-    {
-      title: 'Gestión Documental Web',
-      href: 'https://github.com/jwar28/gestion-documental-web',
-      active: true,
-      description: 'Informative page for Document management technology',
-      technologies: ['Astro', 'React'],
-      category: 'Web development',
-      isFeatured: false,
-      links: [
-        {
-          type: 'Website',
-          href: 'https://gestion-documental-web.vercel.app/',
-          icon: <Icons.globe className='size-3' />,
-        },
-        {
-          type: 'Source',
-          href: 'https://github.com/cursedshadow1234/Cursed-Shadow',
-          icon: <Icons.github className='size-3' />,
-        },
-      ],
-      image: '/gweb.png',
       video: '',
     },
   ],
