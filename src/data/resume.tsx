@@ -8,7 +8,7 @@ export const DATA = {
   location: 'Bucaramanga, COL',
   locationLink: 'https://www.google.com/maps/place/bucaramanga',
   description:
-    'Software Engineer with strong focus on user experience, design and quality code',
+    'Engineer with a frontend soul, full stack mind, and AI curiosity. Passionate about transforming complex problems into simple, practical solutions.',
   avatarUrl: '/me.png',
   skills: [
     'React',
@@ -132,7 +132,7 @@ export const DATA = {
       title: 'Emofind',
       href: 'https://github.com/jwar28/emofind.web',
       active: true,
-      description: 'An AI-powered app leveraging neural networks and LLMs to analyze and identify the overall sentiment of a given text',
+      description: 'AI-powered app leveraging neural networks and LLMs to analyze and identify the overall sentiment of a given text',
       technologies: ['Next.js', 'Tailwind CSS', 'AI'],
       category: 'Artificial Intelligence',
       isFeatured: true,

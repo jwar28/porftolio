@@ -5,9 +5,9 @@ import { ResumeCard } from '@/components/resume-card'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { DATA } from '@/data/resume'
+import { ChevronRightIcon } from 'lucide-react'
 import Link from 'next/link'
 import ShimmerButton from '../components/magicui/shimmer-button'
-import { ChevronRightIcon } from 'lucide-react'
 
 const BLUR_FADE_DELAY = 0.04
 
@@ -27,13 +27,13 @@ export default function Page() {
                 text={`Hi, I'm ${DATA.name.split(' ')[0]} 👋`}
               />
               <BlurFadeText
-                className='max-w-[600px] md:text-xl'
+                className='max-w-[600px] md:text-xl text-pretty'
                 delay={BLUR_FADE_DELAY}
                 text={DATA.description}
               />
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className='size-28 border'>
+              <Avatar className='size-40 border'>
                 <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
                 <AvatarFallback>{DATA.initials}</AvatarFallback>
               </Avatar>
@@ -158,18 +158,21 @@ export default function Page() {
                 Contact
               </div>
               <h2 className='text-3xl font-bold tracking-tighter sm:text-5xl'>
-                Get in Touch
+                Let&apos;s Connect
               </h2>
-              <p className='mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
-                Want to chat? Just shoot me a dm{' '}
-                <Link
-                  href={DATA.contact.social.X.url}
-                  className='text-blue-500 hover:underline'
-                >
-                  with a direct question on twitter
-                </Link>{' '}
-                and I&apos;ll respond whenever I can.
+              <p className='mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mb-6'>
+                Ready to collaborate on something amazing? I&apos;m always open to discussing new projects, opportunities, and ideas.
               </p>
+              <Link
+                href={DATA.contact.social.LinkedIn.url}
+                target='_blank'
+                className='inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors shadow-lg hover:shadow-xl'
+              >
+                <svg className='w-5 h-5' fill='currentColor' viewBox='0 0 20 20'>
+                  <path fillRule='evenodd' d='M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z' clipRule='evenodd' />
+                </svg>
+                Connect on LinkedIn
+              </Link>
             </div>
           </BlurFade>
         </div>
