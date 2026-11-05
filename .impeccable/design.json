@@ -1,0 +1,394 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-05T13:30:08+00:00",
+  "title": "Design System: Javier Guerra — Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "primary",
+        "displayName": "Ink",
+        "canonical": "hsl(220 22% 10%)",
+        "cssVar": "--fg",
+        "tonalRamp": [
+          "hsl(220 22% 15%)",
+          "hsl(220 22% 25%)",
+          "hsl(220 22% 35%)",
+          "hsl(220 22% 45%)",
+          "hsl(220 22% 60%)",
+          "hsl(220 22% 75%)",
+          "hsl(220 22% 88%)",
+          "hsl(220 22% 95%)"
+        ]
+      },
+      "ink-blue": {
+        "role": "secondary",
+        "displayName": "Ink Blue",
+        "canonical": "hsl(226 70% 45%)",
+        "cssVar": "--accent",
+        "tonalRamp": [
+          "hsl(226 70% 15%)",
+          "hsl(226 70% 25%)",
+          "hsl(226 70% 35%)",
+          "hsl(226 70% 45%)",
+          "hsl(226 70% 60%)",
+          "hsl(226 70% 75%)",
+          "hsl(226 70% 88%)",
+          "hsl(226 70% 95%)"
+        ]
+      },
+      "cool-paper": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "hsl(210 20% 99%)",
+        "cssVar": "--bg",
+        "tonalRamp": [
+          "hsl(210 20% 15%)",
+          "hsl(210 20% 25%)",
+          "hsl(210 20% 35%)",
+          "hsl(210 20% 45%)",
+          "hsl(210 20% 60%)",
+          "hsl(210 20% 75%)",
+          "hsl(210 20% 88%)",
+          "hsl(210 20% 95%)"
+        ]
+      },
+      "graphite": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "hsl(220 8% 38%)",
+        "cssVar": "--muted",
+        "tonalRamp": [
+          "hsl(220 8% 15%)",
+          "hsl(220 8% 25%)",
+          "hsl(220 8% 35%)",
+          "hsl(220 8% 45%)",
+          "hsl(220 8% 60%)",
+          "hsl(220 8% 75%)",
+          "hsl(220 8% 88%)",
+          "hsl(220 8% 95%)"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "hsl(220 14% 89%)",
+        "cssVar": "--line",
+        "tonalRamp": [
+          "hsl(220 14% 15%)",
+          "hsl(220 14% 25%)",
+          "hsl(220 14% 35%)",
+          "hsl(220 14% 45%)",
+          "hsl(220 14% 60%)",
+          "hsl(220 14% 75%)",
+          "hsl(220 14% 88%)",
+          "hsl(220 14% 95%)"
+        ]
+      },
+      "paper-shade": {
+        "role": "neutral",
+        "displayName": "Paper Shade",
+        "canonical": "hsl(220 16% 96%)",
+        "cssVar": "--subtle",
+        "tonalRamp": [
+          "hsl(220 16% 15%)",
+          "hsl(220 16% 25%)",
+          "hsl(220 16% 35%)",
+          "hsl(220 16% 45%)",
+          "hsl(220 16% 60%)",
+          "hsl(220 16% 75%)",
+          "hsl(220 16% 88%)",
+          "hsl(220 16% 95%)"
+        ]
+      },
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Night Ink (dark background)",
+        "canonical": "hsl(220 14% 7%)",
+        "cssVar": "--bg (.dark)",
+        "tonalRamp": [
+          "hsl(220 14% 15%)",
+          "hsl(220 14% 25%)",
+          "hsl(220 14% 35%)",
+          "hsl(220 14% 45%)",
+          "hsl(220 14% 60%)",
+          "hsl(220 14% 75%)",
+          "hsl(220 14% 88%)",
+          "hsl(220 14% 95%)"
+        ]
+      },
+      "night-text": {
+        "role": "primary",
+        "displayName": "Night Text (dark ink)",
+        "canonical": "hsl(220 14% 93%)",
+        "cssVar": "--fg (.dark)",
+        "tonalRamp": [
+          "hsl(220 14% 15%)",
+          "hsl(220 14% 25%)",
+          "hsl(220 14% 35%)",
+          "hsl(220 14% 45%)",
+          "hsl(220 14% 60%)",
+          "hsl(220 14% 75%)",
+          "hsl(220 14% 88%)",
+          "hsl(220 14% 95%)"
+        ]
+      },
+      "night-graphite": {
+        "role": "neutral",
+        "displayName": "Night Graphite",
+        "canonical": "hsl(220 8% 64%)",
+        "cssVar": "--muted (.dark)",
+        "tonalRamp": [
+          "hsl(220 8% 15%)",
+          "hsl(220 8% 25%)",
+          "hsl(220 8% 35%)",
+          "hsl(220 8% 45%)",
+          "hsl(220 8% 60%)",
+          "hsl(220 8% 75%)",
+          "hsl(220 8% 88%)",
+          "hsl(220 8% 95%)"
+        ]
+      },
+      "night-hairline": {
+        "role": "neutral",
+        "displayName": "Night Hairline",
+        "canonical": "hsl(220 10% 17%)",
+        "cssVar": "--line (.dark)",
+        "tonalRamp": [
+          "hsl(220 10% 15%)",
+          "hsl(220 10% 25%)",
+          "hsl(220 10% 35%)",
+          "hsl(220 10% 45%)",
+          "hsl(220 10% 60%)",
+          "hsl(220 10% 75%)",
+          "hsl(220 10% 88%)",
+          "hsl(220 10% 95%)"
+        ]
+      },
+      "night-shade": {
+        "role": "neutral",
+        "displayName": "Night Shade",
+        "canonical": "hsl(220 12% 11%)",
+        "cssVar": "--subtle (.dark)",
+        "tonalRamp": [
+          "hsl(220 12% 15%)",
+          "hsl(220 12% 25%)",
+          "hsl(220 12% 35%)",
+          "hsl(220 12% 45%)",
+          "hsl(220 12% 60%)",
+          "hsl(220 12% 75%)",
+          "hsl(220 12% 88%)",
+          "hsl(220 12% 95%)"
+        ]
+      },
+      "night-blue": {
+        "role": "secondary",
+        "displayName": "Night Blue (dark accent)",
+        "canonical": "hsl(224 92% 74%)",
+        "cssVar": "--accent (.dark)",
+        "tonalRamp": [
+          "hsl(224 92% 15%)",
+          "hsl(224 92% 25%)",
+          "hsl(224 92% 35%)",
+          "hsl(224 92% 45%)",
+          "hsl(224 92% 60%)",
+          "hsl(224 92% 75%)",
+          "hsl(224 92% 88%)",
+          "hsl(224 92% 95%)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Name on home, page title on Projects; 2rem below 640px, 2.5rem above. One per page."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Closing Contact heading only."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Project, job and degree titles; header name mark."
+      },
+      "body-lead": {
+        "displayName": "Body Lead",
+        "purpose": "Intro bio and page intros, max 34-36rem."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Descriptions inside entries (14-15px)."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Section h2s, small and Graphite."
+      },
+      "data": {
+        "displayName": "Data (Geist Mono)",
+        "purpose": "Timeline dates and the language code; tabular numerals."
+      }
+    },
+    "shadows": [
+      {
+        "name": "button-contact",
+        "value": "0 1px 2px hsl(220 30% 5% / 0.12)",
+        "purpose": "Primary button only; the system is otherwise flat."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All signature motion: entrance, frame border, capture drift, arrow nudge."
+      },
+      {
+        "name": "duration-state",
+        "value": "150ms",
+        "purpose": "Color and background state changes on links, buttons, nav."
+      },
+      {
+        "name": "duration-arrow",
+        "value": "200ms",
+        "purpose": "Arrow-link icon nudge (1px up-right)."
+      },
+      {
+        "name": "duration-frame",
+        "value": "300ms",
+        "purpose": "Screenshot frame border sharpening on entry hover/focus."
+      },
+      {
+        "name": "duration-drift",
+        "value": "700ms",
+        "purpose": "Screenshot capture scale to 1.025 on entry hover/focus."
+      },
+      {
+        "name": "reveal",
+        "value": "600ms rise 6px + fade",
+        "purpose": "One page entrance per route; collapsed under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single solid call to action (email) in the intro.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\"/><path d=\"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7\"/></svg>Escríbeme</a>",
+      "css": ".ds-btn{font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; display:inline-flex; align-items:center; gap:8px; height:40px; padding:0 16px; border-radius:8px; font-size:14px; font-weight:500; text-decoration:none; transition:background-color 150ms, color 150ms, transform 150ms;} .ds-btn:active{transform:translateY(1px);} .ds-btn:focus-visible{outline:2px solid hsl(var(--accent)); outline-offset:3px;} .ds-btn-primary{background:hsl(var(--fg)); color:hsl(var(--bg)); box-shadow:0 1px 2px hsl(220 30% 5% / 0.12);} .ds-btn-primary:hover{background:hsl(var(--fg) / 0.86);}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Outlined companion to the primary button (CV download).",
+      "html": "<a class=\"ds-btn2\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z\"/><path d=\"M14 2v4a2 2 0 0 0 2 2h4\"/><path d=\"M10 13H8\"/><path d=\"M16 17H8\"/></svg>Descargar CV</a>",
+      "css": ".ds-btn2{font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; display:inline-flex; align-items:center; gap:8px; height:40px; padding:0 16px; border-radius:8px; border:1px solid hsl(var(--line)); color:hsl(var(--fg)); background:transparent; font-size:14px; font-weight:500; text-decoration:none; transition:background-color 150ms, transform 150ms;} .ds-btn2:hover{background:hsl(var(--subtle));} .ds-btn2:active{transform:translateY(1px);} .ds-btn2:focus-visible{outline:2px solid hsl(var(--accent)); outline-offset:3px;}"
+    },
+    {
+      "name": "Icon Button",
+      "kind": "button",
+      "refersTo": "icon-button",
+      "description": "Square social link (GitHub, LinkedIn, X).",
+      "html": "<a class=\"ds-icon-btn\" href=\"#\" aria-label=\"X\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M18.9 2H22l-7.4 8.5L23 22h-6.8l-5.3-7-6.1 7H1.6l7.9-9.1L1 2h7l4.8 6.4L18.9 2Zm-1.2 18h1.9L7.4 3.9H5.4L17.7 20Z\"/></svg></a>",
+      "css": ".ds-icon-btn{display:inline-grid; place-items:center; width:40px; height:40px; border-radius:8px; color:hsl(var(--muted)); transition:color 150ms, background-color 150ms;} .ds-icon-btn:hover{color:hsl(var(--fg)); background:hsl(var(--subtle));} .ds-icon-btn:focus-visible{outline:2px solid hsl(var(--accent)); outline-offset:3px;}"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav-item",
+      "description": "Name mark left; nav items, hairline divider and mono language code right.",
+      "html": "<header class=\"ds-header\"><a class=\"ds-mark\" href=\"#\">Javier Guerra</a><nav class=\"ds-nav\"><a class=\"ds-nav-item\" aria-current=\"page\" href=\"#\">Proyectos</a><a class=\"ds-nav-item\" href=\"#\">CV</a><span class=\"ds-nav-div\"></span><a class=\"ds-nav-item ds-lang\" href=\"#\">en</a></nav></header>",
+      "css": ".ds-header{font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:24px 0; max-width:42rem;} .ds-mark{font-size:15px; font-weight:600; letter-spacing:-0.025em; color:hsl(var(--fg)); text-decoration:none;} .ds-nav{display:flex; align-items:center; gap:4px; font-size:14px;} .ds-nav-item{display:inline-flex; align-items:center; height:32px; padding:0 10px; border-radius:6px; color:hsl(var(--muted)); text-decoration:none; transition:color 150ms;} .ds-nav-item:hover{color:hsl(var(--fg)); background:hsl(var(--subtle));} .ds-nav-item[aria-current='page']{color:hsl(var(--fg));} .ds-nav-item:focus-visible{outline:2px solid hsl(var(--accent)); outline-offset:3px;} .ds-nav-div{margin:0 6px; width:1px; height:16px; background:hsl(var(--line));} .ds-lang{font-family:var(--font-geist-mono), ui-monospace, monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.025em;}"
+    },
+    {
+      "name": "Filter Toggle",
+      "kind": "chip",
+      "refersTo": "filter-toggle",
+      "description": "Text toggles that filter the projects index by technology; pressed state carries an ink-blue underline.",
+      "html": "<div class=\"ds-filters\"><button class=\"ds-filter\" aria-pressed=\"true\">Todos</button><button class=\"ds-filter\" aria-pressed=\"false\">Next.js</button><button class=\"ds-filter\" aria-pressed=\"false\">Tailwind CSS</button></div>",
+      "css": ".ds-filters{font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; display:flex; gap:16px;} .ds-filter{display:inline-flex; align-items:center; height:32px; padding:0; border:0; background:none; border-radius:4px; font:inherit; font-size:14px; color:hsl(var(--muted)); cursor:pointer; text-decoration:underline; text-decoration-color:transparent; text-decoration-thickness:1.5px; text-underline-offset:6px; transition:color 150ms, text-decoration-color 150ms;} .ds-filter:hover{color:hsl(var(--fg));} .ds-filter[aria-pressed='true']{color:hsl(var(--fg)); text-decoration-color:hsl(var(--accent));} .ds-filter:focus-visible{outline:2px solid hsl(var(--accent)); outline-offset:3px;}"
+    },
+    {
+      "name": "Arrow Link",
+      "kind": "custom",
+      "description": "Underlined text link with a nudging arrow; turns ink blue on hover.",
+      "html": "<a class=\"ds-arrow\" href=\"#\">Ver sitio<svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a>",
+      "css": ".ds-arrow{font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; display:inline-flex; align-items:center; gap:4px; font-size:13px; color:hsl(var(--fg)); text-decoration:underline; text-decoration-color:hsl(var(--line)); text-decoration-thickness:1px; text-underline-offset:5px; border-radius:4px; transition:color 150ms, text-decoration-color 150ms;} .ds-arrow:hover{color:hsl(var(--accent)); text-decoration-color:hsl(var(--accent) / 0.5);} .ds-arrow svg{transition:transform 200ms cubic-bezier(0.16, 1, 0.3, 1);} .ds-arrow:hover svg{transform:translate(1px,-1px);} .ds-arrow:focus-visible{outline:2px solid hsl(var(--accent)); outline-offset:3px;}"
+    },
+    {
+      "name": "Project Entry",
+      "kind": "card",
+      "refersTo": "screenshot-frame",
+      "description": "Signature: framed 16:10 screenshot over a title row; hovering the entry sharpens the frame, drifts the capture and underlines the title together.",
+      "html": "<article class=\"ds-project\"><div class=\"ds-frame\"><div class=\"ds-shot\"></div></div><div class=\"ds-row\"><h3><a class=\"ds-title\" href=\"#\">Unabccess</a></h3><span class=\"ds-cat\">Desarrollo web</span></div><p class=\"ds-desc\">Software para gestionar reservas de espacios y control de acceso.</p><ul class=\"ds-tech\"><li>Next.js</li><li>Firebase</li></ul></article>",
+      "css": ".ds-project{font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; max-width:320px;} .ds-frame{position:relative; aspect-ratio:16/10; overflow:hidden; border-radius:8px; border:1px solid hsl(var(--line)); background:hsl(var(--subtle)); transition:border-color 300ms cubic-bezier(0.16, 1, 0.3, 1);} .ds-shot{position:absolute; inset:0; background:linear-gradient(180deg, hsl(var(--bg)) 0 18%, hsl(var(--subtle)) 18% 100%); transition:transform 700ms cubic-bezier(0.16, 1, 0.3, 1);} .ds-project:hover .ds-frame, .ds-project:focus-within .ds-frame{border-color:hsl(var(--fg) / 0.28);} .ds-project:hover .ds-shot, .ds-project:focus-within .ds-shot{transform:scale(1.025);} .ds-row{margin-top:16px; display:flex; align-items:baseline; justify-content:space-between; gap:12px;} .ds-row h3{margin:0; font-size:15px; font-weight:600; letter-spacing:-0.025em;} .ds-title{color:hsl(var(--fg)); text-decoration:underline; text-decoration-color:transparent; text-decoration-thickness:1px; text-underline-offset:5px; transition:text-decoration-color 150ms;} .ds-project:hover .ds-title, .ds-project:focus-within .ds-title{text-decoration-color:hsl(var(--fg) / 0.35);} .ds-cat{font-size:12px; color:hsl(var(--muted));} .ds-desc{margin:6px 0 0; font-size:14px; line-height:1.625; color:hsl(var(--muted));} .ds-tech{margin:12px 0 0; padding:0; list-style:none; display:flex; flex-wrap:wrap; gap:4px 12px; font-size:13px; color:hsl(var(--muted));}"
+    },
+    {
+      "name": "Timeline Row",
+      "kind": "custom",
+      "description": "Mono date column beside a fluid entry; the grammar for experience and education.",
+      "html": "<div class=\"ds-tl\"><p class=\"ds-date\">jun 2022 — dic 2022</p><div><h3 class=\"ds-tl-title\">Practicante de TI · NTT DATA</h3><p class=\"ds-tl-meta\">Remoto</p></div></div>",
+      "css": ".ds-tl{font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; display:grid; grid-template-columns:10rem 1fr; gap:24px; border-top:1px solid hsl(var(--line)); padding-top:24px;} .ds-date{margin:0; padding-top:3px; font-family:var(--font-geist-mono), ui-monospace, monospace; font-size:12px; font-variant-numeric:tabular-nums; white-space:nowrap; color:hsl(var(--muted));} .ds-tl-title{margin:0; font-size:15px; font-weight:600; letter-spacing:-0.025em; color:hsl(var(--fg));} .ds-tl-meta{margin:2px 0 0; font-size:13px; color:hsl(var(--muted));}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Column",
+    "overview": "A single reading column of near-black ink on cool near-white paper. Typography, spacing and real screenshots carry the page; there is no decoration standing in for content. The register is the canonical developer portfolio executed at craft level: calm, legible in a skim, confident without volume.\n\nStructure comes from hairline rules and rhythm, not containers. Sections are separated by a 1px rule and generous vertical space; entries are rows, not cards. Color is almost absent: one ink-blue accent appears only where something is interactive at the moment of interaction (link hover, focus, selection, the pressed filter, the contact email underline). Motion is short and soft: one entrance rise per page and a slow, small drift on project captures.\n\nThe system explicitly replaces a template look; the refused signatures are a bottom dock, blur-fade on every element, purple radial glow, shimmer buttons, emoji greetings and badge clouds.",
+    "keyCharacteristics": [
+      "One centered column, 42rem max, on every route.",
+      "Ink and paper; one ink-blue accent reserved for interaction.",
+      "Geist for all text; Geist Mono only for dates and data.",
+      "Hairline rules instead of cards; screenshots in 1px frames with 8px corners.",
+      "Full light and dark parity; dark is a tonal inversion, not a new palette."
+    ],
+    "rules": [
+      {
+        "name": "The Accent Is a Response Rule",
+        "body": "Ink Blue never sits on the page as decoration or fill. It appears on hover, focus, selection or a pressed state; the contact email underline is the single resting exception. If a screen shows blue with nobody touching it, something is wrong.",
+        "section": "colors"
+      },
+      {
+        "name": "The Opacity Not Hue Rule",
+        "body": "Intermediate emphasis is made by lowering Ink's alpha (90%, 85%, 35% underline, 28% frame on hover), not by adding new grays or tints.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mono Means Data Rule",
+        "body": "Geist Mono is only for dates, codes and numbers that benefit from tabular alignment. Never for headings, labels or decoration.",
+        "section": "typography"
+      },
+      {
+        "name": "The Weight Not Size Rule",
+        "body": "Within an entry, title and body differ by weight and color at nearly the same size (15px/600 vs 14px/400). Don't introduce intermediate size steps to create hierarchy.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Floating Cards Rule",
+        "body": "Content never sits in shadowed cards. If grouping is needed, use a hairline rule or a row, not a box with elevation.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep every route inside the single 42rem column with the same header and footer.",
+      "Do separate sections and list entries with 1px Hairline rules and vertical space.",
+      "Do reserve Ink Blue for hover, focus, selection and pressed states (plus the contact email underline).",
+      "Do use Geist Mono only for dates, codes and tabular data.",
+      "Do frame real screenshots at 16:10 with an 8px radius and a 1px Hairline border.",
+      "Do use `cubic-bezier(0.16, 1, 0.3, 1)` for motion, 150ms for color state changes, and honor reduced motion.",
+      "Do ship light and dark together, swapping every token to its night counterpart."
+    ],
+    "donts": [
+      "Don't put content in shadowed cards or add elevation beyond the primary button's contact shadow.",
+      "Don't add a bottom dock, blur-fade on every element, purple radial glows, shimmer buttons, emoji greetings or badge clouds.",
+      "Don't render technology stacks as pill badges; they are plain Graphite text.",
+      "Don't use Ink Blue as a fill, a background or a decorative color at rest.",
+      "Don't add new grays or tints; vary Ink's opacity instead."
+    ]
+  }
+}

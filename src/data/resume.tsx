@@ -1,395 +1,377 @@
-import { Icons } from '@/components/icons'
-import { ComputerIcon, FileText, HomeIcon } from 'lucide-react'
+import type { Dictionary } from '@/i18n/dictionaries'
+import type { Localized } from '@/i18n/config'
+
+export type ProjectCategory = keyof Dictionary['categories']
+export type LinkKind = 'live' | 'source' | 'api' | 'mobile'
+
+export interface Project {
+  slug: string
+  title: string
+  description: Localized
+  category: ProjectCategory
+  technologies: string[]
+  featured: boolean
+  /** Screenshot in /public; projects without one render as text-only rows. */
+  image?: string
+  links: { kind: LinkKind; href: string }[]
+}
 
 export const DATA = {
   name: 'Javier Guerra',
   initials: 'JG',
   url: 'https://www.javierguerra.dev',
-  location: 'Bucaramanga, COL',
-  locationLink: 'https://www.google.com/maps/place/bucaramanga',
-  description:
-    'Engineer with a frontend soul, full stack mind, and AI curiosity. Passionate about transforming complex problems into simple, practical solutions.',
+  location: 'Bucaramanga, Colombia',
   avatarUrl: '/me.png',
-  skills: [
-    'React',
-    'Next.js',
-    'Astro',
-    'Svelte',
-    'Typescript',
-    'Node.js',
-    'Python',
-    'Docker',
-    'Oracle Apex',
-    'Postgres',
-    'Mongo',
-    'Firebase',
-  ],
-  navbar: [
-    { href: '/', icon: HomeIcon, label: 'Home' },
-    { href: '/projects', icon: ComputerIcon, label: 'Projects' },
-    { href: '/cv.pdf', icon: FileText, label: 'See cv', target: '_blank' },
-  ],
+  cvUrl: { es: '/cv-es.pdf', en: '/cv-en.pdf' } satisfies Localized,
+  bio: {
+    es: 'Construyo aplicaciones web de principio a fin con Next.js, TypeScript y Node.js, con especial cuidado en la interfaz. Las conecto con datos y automatizaciones en Python, SQL y n8n para convertir problemas complejos en productos simples y prácticos.',
+    en: 'I build web applications end to end with Next.js, TypeScript and Node.js, with special care for the interface. I connect them to data and automations with Python, SQL and n8n to turn complex problems into simple, practical products.',
+  } satisfies Localized,
+
   contact: {
-    email: 'javierguerra2203@gmail.com',
-    tel: '+57',
-    social: {
-      GitHub: {
-        name: 'GitHub',
-        url: 'https://github.com/jwar28',
-        icon: Icons.github,
-
-        navbar: true,
-      },
-      LinkedIn: {
-        name: 'LinkedIn',
-        url: 'https://www.linkedin.com/in/javier-guerra-258401233/',
-        icon: Icons.linkedin,
-
-        navbar: true,
-      },
-      X: {
-        name: 'X',
-        url: 'https://x.com/jguerra22K',
-        icon: Icons.x,
-
-        navbar: true,
-      },
-      email: {
-        name: 'Send Email',
-        url: '#',
-        icon: Icons.email,
-
-        navbar: false,
-      },
-    },
+    email: 'guerraturizojavier@gmail.com',
+    github: 'https://github.com/jwar28',
+    linkedin: 'https://www.linkedin.com/in/jguerra2203/',
   },
+
+  skills: {
+    languages: ['Python', 'JavaScript', 'TypeScript', 'SQL', 'Bash', 'MQL (MongoDB)'],
+    frameworks: ['Node.js', 'Next.js', 'FastAPI', 'Astro', 'n8n', 'Power Automate'],
+    databases: ['PostgreSQL', 'MySQL', 'Oracle', 'MongoDB'],
+    cloud: ['Azure', 'Google Cloud Platform', 'Docker', 'Firebase', 'Supabase', 'Vercel', 'Git'],
+    data: ['Power BI', 'Tableau', 'Databricks', 'ETL/ELT', 'Excel / Google Sheets'],
+  } satisfies Record<Exclude<keyof Dictionary['skills'], 'spoken'>, string[]>,
+
+  spokenLanguages: [
+    { name: { es: 'Español', en: 'Spanish' }, level: { es: 'Nativo', en: 'Native' } },
+    { name: { es: 'Inglés', en: 'English' }, level: { es: 'Profesional (C1)', en: 'Proficient (C1)' } },
+  ],
 
   work: [
     {
+      company: 'Siigo',
+      href: 'https://www.siigo.com/',
+      title: { es: 'Analista de Automatización', en: 'Automation Analyst' },
+      location: { es: 'Colombia', en: 'Colombia' },
+      start: '2026-06',
+      end: null,
+      highlights: [
+        {
+          es: 'Desarrollé automatizaciones para el área contable de Siigo Colombia con n8n y Power Automate, según requerimientos y permisos.',
+          en: "Built automations for Siigo Colombia's accounting team with n8n and Power Automate, based on each requirement and access permissions.",
+        },
+        {
+          es: 'Realicé múltiples levantamientos de requerimientos sobre los procesos manuales de los contadores para automatizarlos.',
+          en: 'Led multiple requirements-gathering sessions with accountants to map manual processes for later automation.',
+        },
+        {
+          es: 'Estoy desarrollando un portal web (Next.js, Supabase, Vercel) que reúne todas estas automatizaciones en un solo lugar, para que los contadores puedan acceder a ellas y usarlas fácilmente.',
+          en: 'Developing a web portal (Next.js, Supabase, Vercel) that brings all these automations together in one place, so accountants can easily access and use them.',
+        },
+        {
+          es: 'Reduje un proceso que tomaba un día completo de trabajo manual a 20 segundos de ejecución en máquina.',
+          en: 'Reduced a process that took a full day of manual work to 20 seconds of machine execution.',
+        },
+      ],
+      tools: ['n8n', 'Power Automate', 'Next.js', 'Supabase', 'Vercel'],
+    },
+    {
+      company: 'AnniQ',
+      companyDetail: 'Intelligent Customer Success Suite',
+      title: { es: 'Ingeniero de IA y Automatización', en: 'AI and Automation Engineer' },
+      location: { es: 'Remoto, EE. UU.', en: 'Remote, USA' },
+      start: '2025-11',
+      end: null,
+      highlights: [
+        {
+          es: 'Diseñé e implementé pipelines automatizados de ingesta de datos con n8n, integrando múltiples fuentes y cargando datos estructurados en PostgreSQL para casos de uso operativos y analíticos.',
+          en: 'Designed and implemented automated data ingestion pipelines using n8n, integrating multiple sources and loading structured data into PostgreSQL for both operational and analytical use cases.',
+        },
+        {
+          es: 'Optimicé procesos internos eliminando las dependencias de LLM de los pipelines críticos, reduciendo los costos operativos a cero y mejorando significativamente los tiempos de procesamiento.',
+          en: 'Optimized internal processes by removing LLM dependencies from critical pipelines, reducing operational costs to zero while significantly improving processing times and computational efficiency.',
+        },
+        {
+          es: 'Contribuí a las iniciativas de ingeniería de datos, incluyendo el modelado de datos y el diseño de un almacén de datos para el análisis de métricas de redes sociales.',
+          en: 'Contributed to data engineering efforts, including data modeling and the design of a data warehouse for social media metrics analysis.',
+        },
+      ],
+      tools: ['n8n', 'PostgreSQL', 'Data modeling'],
+    },
+    {
       company: 'NTT DATA',
       href: 'https://co.nttdata.com/',
-      badges: [],
-      location: 'Remote',
-      title: 'TI Trainee',
-      logoUrl: '/nttdata.png',
-      start: 'Jun 2022',
-      end: 'Dec 2022',
-      description:
-        "I provided remote support for Terpel's applications, utilizing tools such as SQL Server Management Studio, Google Cloud Platform (GCP), and Postman. Additionally, I helped in the optimization of a key process in one of the company's main applications for managing large fleets.",
+      title: {
+        es: 'Analista de Datos/BI — Proyecto Facturación GNV Terpel',
+        en: 'Data/BI Analyst — Terpel GNV Billing Project',
+      },
+      location: { es: 'Remoto, Colombia', en: 'Remote, Colombia' },
+      start: '2022-06',
+      end: '2022-12',
+      highlights: [
+        {
+          es: 'Apoyé la migración de infraestructura local a Google Cloud Platform (GCP) para una plataforma nacional de facturación, mejorando la confiabilidad del sistema y habilitando la automatización de procesos en la nube.',
+          en: 'Supported the migration from on-premise infrastructure to Google Cloud Platform (GCP) for a national billing platform, improving system reliability and enabling cloud-based process automation.',
+        },
+        {
+          es: 'Trabajé con bases de datos relacionales en entornos de facturación, realizando validaciones SQL, conciliaciones y controles de calidad de datos para garantizar su integridad.',
+          en: 'Worked with relational databases in billing environments, performing SQL validations, reconciliations, and data quality checks to ensure data integrity.',
+        },
+        {
+          es: 'Monitoreé y optimicé operaciones de datos en tiempo real, documentando flujos de trabajo críticos para reducir errores, mejorar la trazabilidad y cumplir los SLA operativos.',
+          en: 'Monitored and optimized real-time data operations, documenting critical workflows to reduce errors, improve traceability, and meet operational SLAs.',
+        },
+      ],
+      tools: ['SQL', 'GCP', 'Data quality'],
     },
-  ],
+  ] as {
+    company: string
+    companyDetail?: string
+    href?: string
+    title: Localized
+    location: Localized
+    start: string
+    end: string | null
+    highlights: Localized[]
+    tools: string[]
+  }[],
+
   education: [
     {
-      school: 'Servicio Nacional de Aprendizaje',
+      school: 'Universidad Autónoma de Bucaramanga',
+      href: 'https://unab.edu.co/',
+      logoUrl: '/unab.jpg',
+      degree: { es: 'Ingeniería de Sistemas', en: 'Bachelor in Systems Engineering' },
+      gpa: '4.2/5',
+      location: 'Bucaramanga, Colombia',
+      start: '2023-02',
+      end: null,
+    },
+    {
+      school: 'Servicio Nacional de Aprendizaje (SENA)',
       href: 'https://oferta.senasofiaplus.edu.co/sofia-oferta/',
-      degree: 'Technologist in Analysis and Development of Information Systems',
       logoUrl: '/sena.png',
-      start: '2019',
-      end: '2022',
+      degree: {
+        es: 'Tecnólogo en Análisis y Desarrollo de Sistemas de Información',
+        en: 'Technologist in Analysis and Development of Information Systems',
+      },
+      location: 'Popayán, Colombia',
+      start: '2020-03',
+      end: '2022-06',
     },
     {
       school: 'Universidad Popular del Cesar',
       href: 'https://www.unicesar.edu.co/',
-      degree: 'Systems Engineering (Transfered to UNAB)',
       logoUrl: '/upc.png',
-      start: '2020',
-      end: '2023',
+      degree: { es: 'Ingeniería de Sistemas', en: 'Undergraduate in Systems Engineering' },
+      gpa: '4.1/5',
+      location: 'Valledupar, Colombia',
+      start: '2020-02',
+      end: '2022-11',
     },
-    {
-      school: 'Universidad Autonoma de Bucaramanga',
-      href: 'https://unab.edu.co/',
-      degree: 'Systems Engineering',
-      logoUrl: '/unab.jpg',
-      start: '2023',
-      end: 'Now',
-    },
-  ],
+  ] as {
+    school: string
+    href: string
+    logoUrl: string
+    degree: Localized
+    gpa?: string
+    location: string
+    start: string
+    end: string | null
+  }[],
+
   projects: [
     {
-      title: 'Gestión Documental Web',
-      href: 'https://github.com/jwar28/gestion-documental-web',
-      active: true,
-      description: 'Informative page for Document management technology',
-      technologies: ['Astro', 'React'],
-      category: 'Web development',
-      isFeatured: true,
-      links: [
-        {
-          type: 'Website',
-          href: 'https://gestion-documental-web.vercel.app/',
-          icon: <Icons.globe className='size-3' />,
-        },
-        {
-          type: 'Source',
-          href: 'https://github.com/cursedshadow1234/Cursed-Shadow',
-          icon: <Icons.github className='size-3' />,
-        },
-      ],
-      images: ['/gweb/logo.png', '/gweb/gweb.png'],
-      video: '',
-    },
-    {
-      title: 'Emofind',
-      href: 'https://github.com/jwar28/emofind.web',
-      active: true,
-      description: 'AI-powered app leveraging neural networks and LLMs to analyze and identify the overall sentiment of a given text',
-      technologies: ['Next.js', 'Tailwind CSS', 'AI'],
-      category: 'Artificial Intelligence',
-      isFeatured: true,
-      links: [
-        {
-          type: 'Source',
-          href: 'https://github.com/jwar28/emofind.web',
-          icon: <Icons.github className='size-3' />,
-        },
-        {
-          type: 'Api',
-          href: 'https://github.com/nibbengineers/emofind.api',
-          icon: <Icons.github className='size-3' />,
-        },
-        {
-          type: 'Mobile',
-          href: 'https://github.com/jwar28/emofind-mobile',
-          icon: <Icons.github className='size-3' />,
-        },
-      ],
-      images: ['/emofind/logo.png', '/emofind/main.png'],
-      video: '',
-    },
-    {
-      title: 'Next X Tailwind',
-      href: 'https://github.com/jwar28/next-x-tailwind',
-      active: true,
-      description: 'Custom template for quickly bootstrapping web applications using Next.js and Tailwind CSS.',
-      technologies: ['Template','Next.js', 'Tailwind CSS'],
-      category: 'Web development',
-      isFeatured: false,
-      links: [
-        {
-          type: 'Source',
-          href: 'https://github.com/jwar28/next-x-tailwind',
-          icon: <Icons.github className='size-3' />,
-        },
-      ],
-      images: ['/nextxtailwind/logo.png'],
-      video: '',
-    },
-    {
-      title: 'Unabcess',
-      href: 'https://github.com/jwar28/unabccess',
-      active: true,
-      description: 'User-friendly software for managing space reservations and access control at Universidad Autónoma de Bucaramanga (UNAB)',
-      technologies: ['Next.js', 'Firebase'],
-      category: 'Web development',
-      isFeatured: true,
-      links: [
-        {
-          type: 'Website',
-          href: 'https://unabccess.vercel.app/',
-          icon: <Icons.globe className='size-3' />,
-        },
-        {
-          type: 'Source',
-          href: 'https://github.com/jwar28/unabccess',
-          icon: <Icons.github className='size-3' />,
-        },
-      ],
-      images: ['/unabcess/logo.png', '/unabcess/dashboard.png', '/unabcess/login.png', '/unabcess/not.png'],
-      video: '',
-    },
-    {
+      slug: 'pokepedia',
       title: 'Pokepedia',
-      href: 'https://pokepedia-six.vercel.app/',
-      active: true,
-      description:
-        'Pokemon app built with Sveltekit, data fetched from PokeAPI',
-      technologies: ['SvelteKit', 'TailwindCSS', 'TypeScript'],
-      category: 'Web Development',
-      isFeatured: true,
+      description: {
+        es: 'Enciclopedia Pokémon hecha con SvelteKit, con datos obtenidos de PokéAPI.',
+        en: 'Pokémon encyclopedia built with SvelteKit, with data fetched from PokéAPI.',
+      },
+      category: 'web',
+      technologies: ['SvelteKit', 'Tailwind CSS', 'TypeScript'],
+      featured: true,
+      image: '/work/pokepedia.png',
       links: [
-        {
-          type: 'Website',
-          href: 'https://pokepedia-six.vercel.app/',
-          icon: <Icons.globe className='size-3' />,
-        },
-        {
-          type: 'Source',
-          href: 'https://github.com/jwar28/pokepedia',
-          icon: <Icons.github className='size-3' />,
-        },
+        { kind: 'live', href: 'https://pokepedia-six.vercel.app/' },
+        { kind: 'source', href: 'https://github.com/jwar28/pokepedia' },
       ],
-      images: ['/pokepedia/logo.png', '/pokepedia/pokepedia.png'],
-      video: '',
     },
     {
-      title: 'Luna llena',
-      href: 'https://luna-llena-three.vercel.app/',
-      active: true,
-      description: 'Static web page for client',
-      technologies: ['Astro', 'TailwindCSS'],
-      category: 'Web Development',
-      isFeatured: false,
+      slug: 'gestion-documental',
+      title: 'Gestión Documental Web',
+      description: {
+        es: 'Sitio informativo para el programa tecnológico en Gestión Documental.',
+        en: 'Informational website for the Document Management technology program.',
+      },
+      category: 'web',
+      technologies: ['Astro', 'React'],
+      featured: true,
+      image: '/work/gestion-documental.png',
       links: [
-        {
-          type: 'Website',
-          href: 'https://luna-llena-three.vercel.app/',
-          icon: <Icons.globe className='size-3' />,
-        },
-        {
-          type: 'Source',
-          href: 'https://luna-llena-three.vercel.app/',
-          icon: <Icons.github className='size-3' />,
-        },
+        { kind: 'live', href: 'https://gestion-documental-web.vercel.app/' },
+        { kind: 'source', href: 'https://github.com/jwar28/gestion-documental-web' },
       ],
-      images: ['/luna-llena/logo.png', '/luna-llena/luna-llena.png'],
-      video: '',
     },
     {
+      slug: 'techno-fix',
       title: 'Techno Fix',
-      href: 'https://techno-fix-five.vercel.app/',
-      active: true,
-      description: 'Static page made for a tech fix company',
-      technologies: ['Astro', 'TailwindCSS', 'React'],
-      category: 'Web Development',
-      isFeatured: false,
+      description: {
+        es: 'Sitio web estático para una empresa de reparación de dispositivos.',
+        en: 'Static website for a device repair company.',
+      },
+      category: 'web',
+      technologies: ['Astro', 'Tailwind CSS', 'React'],
+      featured: true,
+      image: '/work/techno-fix.png',
       links: [
-        {
-          type: 'Website',
-          href: 'https://techno-fix-five.vercel.app/',
-          icon: <Icons.globe className='size-3' />,
-        },
-        {
-          type: 'Source',
-          href: 'https://github.com/jwar28/techno-fix',
-          icon: <Icons.github className='size-3' />,
-        },
+        { kind: 'live', href: 'https://techno-fix-five.vercel.app/' },
+        { kind: 'source', href: 'https://github.com/jwar28/techno-fix' },
       ],
-      images: ['/tf.png'],
-      video: '',
     },
     {
+      slug: 'luna-llena',
+      title: 'Luna Llena',
+      description: {
+        es: 'Sitio web estático para un cliente.',
+        en: 'Static website for a client.',
+      },
+      category: 'web',
+      technologies: ['Astro', 'Tailwind CSS'],
+      featured: true,
+      image: '/work/luna-llena.png',
+      links: [{ kind: 'live', href: 'https://luna-llena-three.vercel.app/' }],
+    },
+    {
+      slug: 'emofind',
+      title: 'Emofind',
+      description: {
+        es: 'Aplicación con IA que usa redes neuronales y LLMs para analizar un texto e identificar su sentimiento general.',
+        en: 'AI-powered app that uses neural networks and LLMs to analyze a text and identify its overall sentiment.',
+      },
+      category: 'ai',
+      technologies: ['Next.js', 'Tailwind CSS', 'AI'],
+      featured: false,
+      image: '/work/emofind.png',
+      links: [
+        { kind: 'source', href: 'https://github.com/jwar28/emofind.web' },
+        { kind: 'api', href: 'https://github.com/nibbengineers/emofind.api' },
+        { kind: 'mobile', href: 'https://github.com/jwar28/emofind-mobile' },
+      ],
+    },
+    {
+      slug: 'unabccess',
+      title: 'Unabccess',
+      description: {
+        es: 'Software para gestionar reservas de espacios y control de acceso en la Universidad Autónoma de Bucaramanga (UNAB).',
+        en: 'User-friendly software for managing space reservations and access control at Universidad Autónoma de Bucaramanga (UNAB).',
+      },
+      category: 'web',
+      technologies: ['Next.js', 'Firebase'],
+      featured: false,
+      image: '/work/unabccess.png',
+      links: [
+        { kind: 'live', href: 'https://unabccess.vercel.app/' },
+        { kind: 'source', href: 'https://github.com/jwar28/unabccess' },
+      ],
+    },
+    {
+      slug: 'rocky',
       title: 'Rocky',
-      href: 'https://rocky-q71s.onrender.com/',
-      active: true,
-      description: 'Movie recommender system using collaborative filtering',
+      description: {
+        es: 'Sistema de recomendación de películas basado en filtrado colaborativo.',
+        en: 'Movie recommender system using collaborative filtering.',
+      },
+      category: 'ai',
       technologies: ['Python', 'Streamlit', 'AI'],
-      category: 'Artificial Intelligence',
-      isFeatured: false,
+      featured: false,
+      image: '/work/rocky.png',
       links: [
-        {
-          type: 'Website',
-          href: 'https://rocky-q71s.onrender.com/',
-          icon: <Icons.globe className='size-3' />,
-        },
-        {
-          type: 'Source',
-          href: 'https://github.com/jwar28/rocky',
-          icon: <Icons.github className='size-3' />,
-        },
+        { kind: 'live', href: 'https://rocky-q71s.onrender.com/' },
+        { kind: 'source', href: 'https://github.com/jwar28/rocky' },
       ],
-      images: ['/rocky.png'],
-      video: '',
     },
     {
-      title: 'Unab Pulse',
-      href: 'https://github.com/jwar28/unab-pulse',
-      active: true,
-      description:
-        'Mobile app to keep track of your university grades and other information',
-      technologies: ['React Native', 'Expo', 'Nativewind'],
-      category: 'Mobile Development',
-      isFeatured: false,
-      links: [
-        {
-          type: 'Source',
-          href: 'https://github.com/jwar28/unab-pulse',
-          icon: <Icons.github className='size-3' />,
-        },
-      ],
-      images: ['/xd.gif'],
-      video: '',
-    },
-    {
+      slug: 'control-stock',
       title: 'Control Stock',
-      href: 'https://control-stock-eight.vercel.app/',
-      active: true,
-      description: 'Web app to manage and control cleaning products stocks',
-      technologies: ['SvelteKit', 'TailwindCSS', 'Firebase'],
-      category: 'Web Development',
-      isFeatured: false,
+      description: {
+        es: 'Aplicación web para gestionar y controlar el inventario de productos de limpieza.',
+        en: 'Web app to manage and control stock of cleaning products.',
+      },
+      category: 'web',
+      technologies: ['SvelteKit', 'Tailwind CSS', 'Firebase'],
+      featured: false,
+      image: '/work/control-stock.png',
       links: [
-        {
-          type: 'Website',
-          href: 'https://control-stock-eight.vercel.app/',
-          icon: <Icons.globe className='size-3' />,
-        },
-        {
-          type: 'Source',
-          href: 'https://github.com/jwar28/control-stock',
-          icon: <Icons.github className='size-3' />,
-        },
+        { kind: 'live', href: 'https://control-stock-eight.vercel.app/' },
+        { kind: 'source', href: 'https://github.com/jwar28/control-stock' },
       ],
-      images: ['/control-stock.png'],
-      video: '',
     },
     {
+      slug: 'unab-space',
       title: 'Unab Space',
-      href: 'https://unab-space.vercel.app/',
-      active: true,
-      description: 'Web page to show university relevant information',
-      technologies: ['Astro', 'TailwindCSS'],
-      category: 'Web Development',
-      isFeatured: false,
+      description: {
+        es: 'Sitio web con información relevante para la comunidad universitaria.',
+        en: 'Website with relevant information for the university community.',
+      },
+      category: 'web',
+      technologies: ['Astro', 'Tailwind CSS'],
+      featured: false,
+      image: '/work/unab-space.png',
       links: [
-        {
-          type: 'Website',
-          href: 'https://unab-space.vercel.app/',
-          icon: <Icons.globe className='size-3' />,
-        },
-        {
-          type: 'Source',
-          href: 'https://github.com/jwar28/unab-space',
-          icon: <Icons.github className='size-3' />,
-        },
+        { kind: 'live', href: 'https://unab-space.vercel.app/' },
+        { kind: 'source', href: 'https://github.com/jwar28/unab-space' },
       ],
-      images: ['/unab-space.png'],
-      video: '',
     },
     {
+      slug: 'unab-pulse',
+      title: 'Unab Pulse',
+      description: {
+        es: 'App móvil para llevar el control de tus notas universitarias y otra información académica.',
+        en: 'Mobile app to keep track of your university grades and other academic information.',
+      },
+      category: 'mobile',
+      technologies: ['React Native', 'Expo', 'NativeWind'],
+      featured: false,
+      links: [{ kind: 'source', href: 'https://github.com/jwar28/unab-pulse' }],
+    },
+    {
+      slug: 'next-x-tailwind',
+      title: 'Next × Tailwind',
+      description: {
+        es: 'Plantilla propia para arrancar aplicaciones web rápidamente con Next.js y Tailwind CSS.',
+        en: 'Custom template for quickly bootstrapping web applications with Next.js and Tailwind CSS.',
+      },
+      category: 'template',
+      technologies: ['Next.js', 'Tailwind CSS'],
+      featured: false,
+      links: [{ kind: 'source', href: 'https://github.com/jwar28/next-x-tailwind' }],
+    },
+    {
+      slug: 'jsclir',
       title: 'JSclir',
-      href: 'https://github.com/jwar28/jsclir',
-      active: true,
-      description: 'Command line app to keep track of personal tasks',
-      technologies: ['JavaScript', 'NodeJs'],
-      category: 'Console App',
-      isFeatured: false,
-      links: [
-        {
-          type: 'Source',
-          href: 'https://github.com/jwar28/jsclir',
-          icon: <Icons.github className='size-3' />,
-        },
-      ],
-      images: ['/xd2.gif'],
-      video: '',
+      description: {
+        es: 'Aplicación de línea de comandos para gestionar tareas personales.',
+        en: 'Command-line app to keep track of personal tasks.',
+      },
+      category: 'cli',
+      technologies: ['JavaScript', 'Node.js'],
+      featured: false,
+      links: [{ kind: 'source', href: 'https://github.com/jwar28/jsclir' }],
     },
     {
+      slug: 'cursed-shadow',
       title: 'Cursed Shadow',
-      href: 'https://github.com/cursedshadow1234/Cursed-Shadow',
-      active: true,
-      description: 'Adventure video game made with Unity for class project',
+      description: {
+        es: 'Videojuego de aventura hecho con Unity como proyecto de clase.',
+        en: 'Adventure video game made with Unity for a class project.',
+      },
+      category: 'game',
       technologies: ['C#', 'Unity'],
-      category: 'Game Development',
-      isFeatured: false,
+      featured: false,
       links: [
-        {
-          type: 'Source',
-          href: 'https://github.com/cursedshadow1234/Cursed-Shadow',
-          icon: <Icons.github className='size-3' />,
-        },
+        { kind: 'source', href: 'https://github.com/cursedshadow1234/Cursed-Shadow' },
       ],
-      images: ['/xd3.gif'],
-      video: '',
     },
-  ],
-} as const
+  ] satisfies Project[] as Project[],
+}
