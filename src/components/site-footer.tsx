@@ -4,7 +4,7 @@ import type { Dictionary } from '@/i18n/dictionaries'
 
 export function SiteFooter({ dict }: { lang: Locale; dict: Dictionary }) {
   return (
-    <footer className='mt-24 flex flex-col gap-2 border-t border-line py-8 text-[13px] text-muted sm:flex-row sm:items-center sm:justify-between'>
+    <footer className='mt-20 flex flex-col gap-1 border-t border-line py-8 text-[13px] text-muted sm:flex-row sm:items-center sm:justify-between'>
       <p>
         © {new Date().getFullYear()} {DATA.name}
       </p>

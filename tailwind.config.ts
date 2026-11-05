@@ -10,10 +10,12 @@ const config = {
     "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
+  // Change-kind pills are composed at runtime from data (`kind-${kind}`).
+  safelist: ["kind-added", "kind-improved", "kind-removed", "kind-migrated", "kind-wip", "kind-research"],
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        sans: ["var(--font-sans)", ...fontFamily.sans],
         mono: ["var(--font-geist-mono)", ...fontFamily.mono],
       },
       colors: {
@@ -25,6 +27,9 @@ const config = {
         },
         line: "hsl(var(--line) / <alpha-value>)",
         subtle: "hsl(var(--subtle) / <alpha-value>)",
+        add: "hsl(var(--add) / <alpha-value>)",
+        imp: "hsl(var(--imp) / <alpha-value>)",
+        del: "hsl(var(--del) / <alpha-value>)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -51,7 +56,7 @@ const config = {
           foreground: "hsl(var(--popover-foreground))",
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
+          DEFAULT: "hsl(var(--card) / <alpha-value>)",
           foreground: "hsl(var(--card-foreground))",
         },
       },

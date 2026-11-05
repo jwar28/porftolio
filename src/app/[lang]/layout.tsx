@@ -1,3 +1,4 @@
+import { MobileBar } from '@/components/mobile-bar'
 import { SiteFooter } from '@/components/site-footer'
 import { SiteHeader } from '@/components/site-header'
 import { ThemeProvider } from '@/components/theme-provider'
@@ -5,10 +6,12 @@ import { DATA } from '@/data/resume'
 import { isLocale, locales, type Locale } from '@/i18n/config'
 import { getDictionary } from '@/i18n/dictionaries'
 import { GeistMono } from 'geist/font/mono'
-import { GeistSans } from 'geist/font/sans'
+import { Schibsted_Grotesk } from 'next/font/google'
 import type { Metadata, Viewport } from 'next'
 import { notFound } from 'next/navigation'
 import '../globals.css'
+
+const sans = Schibsted_Grotesk({ subsets: ['latin'], variable: '--font-sans', display: 'swap' })
 
 export function generateStaticParams() {
   return locales.map(lang => ({ lang }))
@@ -43,8 +46,8 @@ export function generateMetadata({ params }: { params: { lang: string } }): Meta
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#fbfcfd' },
-    { media: '(prefers-color-scheme: dark)', color: '#0f1114' },
+    { media: '(prefers-color-scheme: light)', color: '#fbfaf7' },
+    { media: '(prefers-color-scheme: dark)', color: '#121211' },
   ],
 }
 
@@ -58,18 +61,19 @@ export default function LocaleLayout({
 
   return (
     <html lang={lang} suppressHydrationWarning>
-      <body className={`${GeistSans.variable} ${GeistMono.variable} font-sans`}>
+      <body className={`${sans.variable} ${GeistMono.variable} font-sans`}>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
           <a href='#main' className='skip-link'>
             {dict.nav.skip}
           </a>
-          <div className='mx-auto flex min-h-[100dvh] w-full max-w-[42rem] flex-col px-5 sm:px-6'>
+          <div className='mx-auto flex min-h-[100dvh] w-full max-w-[72rem] flex-col px-4 pb-24 sm:px-8 md:pb-0'>
             <SiteHeader lang={lang} dict={dict} />
             <main id='main' className='flex-1'>
               {children}
             </main>
             <SiteFooter lang={lang} dict={dict} />
           </div>
+          <MobileBar lang={lang} dict={dict} />
         </ThemeProvider>
       </body>
     </html>

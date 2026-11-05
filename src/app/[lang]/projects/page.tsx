@@ -29,14 +29,17 @@ export default function ProjectsPage({ params }: { params: { lang: Locale } }) {
     .filter(([, n]) => n >= 2)
     .map(([tech]) => tech)
 
-  const projects = DATA.projects.map(p => ({ ...p, descriptionText: t(p.description, lang) }))
+  // Newest repo first; projects without a public repo to date them by go last.
+  const projects = [...DATA.projects]
+    .sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''))
+    .map(p => ({ ...p, descriptionText: t(p.description, lang) }))
 
   return (
-    <div className='reveal pt-6 sm:pt-10'>
-      <h1 className='text-[2rem] font-semibold leading-[1.1] tracking-[-0.03em] text-fg sm:text-[2.5rem]'>
+    <div className='pt-6 md:pt-14'>
+      <h1 className='text-[clamp(2.75rem,13vw,5rem)] font-extrabold leading-[0.92] tracking-[-0.045em] text-fg'>
         {dict.projectsPage.title}
       </h1>
-      <p className='mt-4 max-w-[34rem] text-pretty text-[17px] leading-relaxed text-muted'>{dict.projectsPage.intro}</p>
+      <p className='mt-4 max-w-[40rem] text-pretty text-[17px] leading-relaxed text-muted'>{dict.projectsPage.intro}</p>
       <ProjectIndex projects={projects} techs={techs} lang={lang} />
     </div>
   )

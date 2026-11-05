@@ -3,6 +3,9 @@ import type { Localized } from '@/i18n/config'
 
 export type ProjectCategory = keyof Dictionary['categories']
 export type LinkKind = 'live' | 'source' | 'api' | 'mobile'
+/** Changelog vocabulary for each highlight: what kind of change this line records. */
+export type ChangeKind = 'added' | 'improved' | 'removed' | 'migrated' | 'wip' | 'research'
+export type Change = Localized & { kind: ChangeKind }
 
 export interface Project {
   slug: string
@@ -11,6 +14,8 @@ export interface Project {
   category: ProjectCategory
   technologies: string[]
   featured: boolean
+  /** Month the public GitHub repo was created (YYYY-MM); null when there is no public repo to date it by. */
+  date: string | null
   /** Screenshot in /public; projects without one render as text-only rows. */
   image?: string
   links: { kind: LinkKind; href: string }[]
@@ -57,18 +62,22 @@ export const DATA = {
       end: null,
       highlights: [
         {
+          kind: 'added',
           es: 'Desarrollé automatizaciones para el área contable de Siigo Colombia con n8n y Power Automate, según requerimientos y permisos.',
           en: "Built automations for Siigo Colombia's accounting team with n8n and Power Automate, based on each requirement and access permissions.",
         },
         {
+          kind: 'research',
           es: 'Realicé múltiples levantamientos de requerimientos sobre los procesos manuales de los contadores para automatizarlos.',
           en: 'Led multiple requirements-gathering sessions with accountants to map manual processes for later automation.',
         },
         {
+          kind: 'wip',
           es: 'Estoy desarrollando un portal web (Next.js, Supabase, Vercel) que reúne todas estas automatizaciones en un solo lugar, para que los contadores puedan acceder a ellas y usarlas fácilmente.',
           en: 'Developing a web portal (Next.js, Supabase, Vercel) that brings all these automations together in one place, so accountants can easily access and use them.',
         },
         {
+          kind: 'improved',
           es: 'Reduje un proceso que tomaba un día completo de trabajo manual a 20 segundos de ejecución en máquina.',
           en: 'Reduced a process that took a full day of manual work to 20 seconds of machine execution.',
         },
@@ -81,17 +90,20 @@ export const DATA = {
       title: { es: 'Ingeniero de IA y Automatización', en: 'AI and Automation Engineer' },
       location: { es: 'Remoto, EE. UU.', en: 'Remote, USA' },
       start: '2025-11',
-      end: null,
+      end: '2026-06',
       highlights: [
         {
+          kind: 'added',
           es: 'Diseñé e implementé pipelines automatizados de ingesta de datos con n8n, integrando múltiples fuentes y cargando datos estructurados en PostgreSQL para casos de uso operativos y analíticos.',
           en: 'Designed and implemented automated data ingestion pipelines using n8n, integrating multiple sources and loading structured data into PostgreSQL for both operational and analytical use cases.',
         },
         {
-          es: 'Optimicé procesos internos eliminando las dependencias de LLM de los pipelines críticos, reduciendo los costos operativos a cero y mejorando significativamente los tiempos de procesamiento.',
-          en: 'Optimized internal processes by removing LLM dependencies from critical pipelines, reducing operational costs to zero while significantly improving processing times and computational efficiency.',
+          kind: 'improved',
+          es: 'Optimicé los pipelines críticos de datos, mejorando los tiempos de procesamiento y la eficiencia computacional.',
+          en: 'Optimized critical data pipelines, improving processing times and computational efficiency.',
         },
         {
+          kind: 'added',
           es: 'Contribuí a las iniciativas de ingeniería de datos, incluyendo el modelado de datos y el diseño de un almacén de datos para el análisis de métricas de redes sociales.',
           en: 'Contributed to data engineering efforts, including data modeling and the design of a data warehouse for social media metrics analysis.',
         },
@@ -110,14 +122,17 @@ export const DATA = {
       end: '2022-12',
       highlights: [
         {
+          kind: 'migrated',
           es: 'Apoyé la migración de infraestructura local a Google Cloud Platform (GCP) para una plataforma nacional de facturación, mejorando la confiabilidad del sistema y habilitando la automatización de procesos en la nube.',
           en: 'Supported the migration from on-premise infrastructure to Google Cloud Platform (GCP) for a national billing platform, improving system reliability and enabling cloud-based process automation.',
         },
         {
+          kind: 'improved',
           es: 'Trabajé con bases de datos relacionales en entornos de facturación, realizando validaciones SQL, conciliaciones y controles de calidad de datos para garantizar su integridad.',
           en: 'Worked with relational databases in billing environments, performing SQL validations, reconciliations, and data quality checks to ensure data integrity.',
         },
         {
+          kind: 'improved',
           es: 'Monitoreé y optimicé operaciones de datos en tiempo real, documentando flujos de trabajo críticos para reducir errores, mejorar la trazabilidad y cumplir los SLA operativos.',
           en: 'Monitored and optimized real-time data operations, documenting critical workflows to reduce errors, improve traceability, and meet operational SLAs.',
         },
@@ -132,7 +147,7 @@ export const DATA = {
     location: Localized
     start: string
     end: string | null
-    highlights: Localized[]
+    highlights: Change[]
     tools: string[]
   }[],
 
@@ -145,7 +160,7 @@ export const DATA = {
       gpa: '4.2/5',
       location: 'Bucaramanga, Colombia',
       start: '2023-02',
-      end: null,
+      end: '2026-07',
     },
     {
       school: 'Servicio Nacional de Aprendizaje (SENA)',
@@ -191,6 +206,7 @@ export const DATA = {
       category: 'web',
       technologies: ['SvelteKit', 'Tailwind CSS', 'TypeScript'],
       featured: true,
+      date: '2023-05',
       image: '/work/pokepedia.png',
       links: [
         { kind: 'live', href: 'https://pokepedia-six.vercel.app/' },
@@ -207,10 +223,11 @@ export const DATA = {
       category: 'web',
       technologies: ['Astro', 'React'],
       featured: true,
+      date: '2024-09',
       image: '/work/gestion-documental.png',
       links: [
         { kind: 'live', href: 'https://gestion-documental-web.vercel.app/' },
-        { kind: 'source', href: 'https://github.com/jwar28/gestion-documental-web' },
+        { kind: 'source', href: 'https://github.com/jwar28/gestion-documental' },
       ],
     },
     {
@@ -223,6 +240,7 @@ export const DATA = {
       category: 'web',
       technologies: ['Astro', 'Tailwind CSS', 'React'],
       featured: true,
+      date: '2024-05',
       image: '/work/techno-fix.png',
       links: [
         { kind: 'live', href: 'https://techno-fix-five.vercel.app/' },
@@ -239,6 +257,7 @@ export const DATA = {
       category: 'web',
       technologies: ['Astro', 'Tailwind CSS'],
       featured: true,
+      date: null,
       image: '/work/luna-llena.png',
       links: [{ kind: 'live', href: 'https://luna-llena-three.vercel.app/' }],
     },
@@ -252,6 +271,7 @@ export const DATA = {
       category: 'ai',
       technologies: ['Next.js', 'Tailwind CSS', 'AI'],
       featured: false,
+      date: '2025-02',
       image: '/work/emofind.png',
       links: [
         { kind: 'source', href: 'https://github.com/jwar28/emofind.web' },
@@ -269,9 +289,9 @@ export const DATA = {
       category: 'web',
       technologies: ['Next.js', 'Firebase'],
       featured: false,
+      date: '2024-11',
       image: '/work/unabccess.png',
       links: [
-        { kind: 'live', href: 'https://unabccess.vercel.app/' },
         { kind: 'source', href: 'https://github.com/jwar28/unabccess' },
       ],
     },
@@ -285,6 +305,7 @@ export const DATA = {
       category: 'ai',
       technologies: ['Python', 'Streamlit', 'AI'],
       featured: false,
+      date: '2024-05',
       image: '/work/rocky.png',
       links: [
         { kind: 'live', href: 'https://rocky-q71s.onrender.com/' },
@@ -301,9 +322,9 @@ export const DATA = {
       category: 'web',
       technologies: ['SvelteKit', 'Tailwind CSS', 'Firebase'],
       featured: false,
+      date: '2023-10',
       image: '/work/control-stock.png',
       links: [
-        { kind: 'live', href: 'https://control-stock-eight.vercel.app/' },
         { kind: 'source', href: 'https://github.com/jwar28/control-stock' },
       ],
     },
@@ -317,6 +338,7 @@ export const DATA = {
       category: 'web',
       technologies: ['Astro', 'Tailwind CSS'],
       featured: false,
+      date: '2023-02',
       image: '/work/unab-space.png',
       links: [
         { kind: 'live', href: 'https://unab-space.vercel.app/' },
@@ -333,6 +355,7 @@ export const DATA = {
       category: 'mobile',
       technologies: ['React Native', 'Expo', 'NativeWind'],
       featured: false,
+      date: '2024-04',
       links: [{ kind: 'source', href: 'https://github.com/jwar28/unab-pulse' }],
     },
     {
@@ -345,6 +368,7 @@ export const DATA = {
       category: 'template',
       technologies: ['Next.js', 'Tailwind CSS'],
       featured: false,
+      date: '2025-04',
       links: [{ kind: 'source', href: 'https://github.com/jwar28/next-x-tailwind' }],
     },
     {
@@ -357,6 +381,7 @@ export const DATA = {
       category: 'cli',
       technologies: ['JavaScript', 'Node.js'],
       featured: false,
+      date: '2022-04',
       links: [{ kind: 'source', href: 'https://github.com/jwar28/jsclir' }],
     },
     {
@@ -369,9 +394,8 @@ export const DATA = {
       category: 'game',
       technologies: ['C#', 'Unity'],
       featured: false,
-      links: [
-        { kind: 'source', href: 'https://github.com/cursedshadow1234/Cursed-Shadow' },
-      ],
+      date: null,
+      links: [],
     },
   ] satisfies Project[] as Project[],
 }

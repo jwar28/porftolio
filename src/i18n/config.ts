@@ -26,3 +26,8 @@ export function formatDate(value: string | null, lang: Locale): string {
   const m = parts.find(p => p.type === 'month')?.value.replace('.', '') ?? month
   return `${m} ${year}`
 }
+
+/** CalVer tag from a real `YYYY-MM` date: `2026-06` → `v2026.06`. */
+export function calver(value: string): string {
+  return `v${value.replace('-', '.')}`
+}

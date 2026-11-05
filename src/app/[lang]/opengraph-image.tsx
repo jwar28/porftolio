@@ -20,16 +20,16 @@ export default function OpengraphImage({ params }: { params: { lang: string } })
           flexDirection: 'column',
           justifyContent: 'space-between',
           padding: '80px',
-          background: '#fbfcfd',
-          color: '#13161c',
+          background: '#fbfaf7',
+          color: '#121212',
           fontFamily: 'sans-serif',
         }}
       >
-        <div style={{ fontSize: 28, color: '#5a5f6b' }}>javierguerra.dev</div>
+        <div style={{ fontSize: 28, color: '#62625c' }}>javierguerra.dev</div>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <div style={{ fontSize: 96, fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 1 }}>{DATA.name}</div>
-          <div style={{ fontSize: 40, marginTop: 24, color: '#2245c4' }}>{dict.hero.role}</div>
-          <div style={{ fontSize: 28, marginTop: 28, color: '#5a5f6b', maxWidth: 900, lineHeight: 1.4 }}>
+          <div style={{ fontSize: 40, marginTop: 24, color: '#14804a' }}>{dict.hero.role}</div>
+          <div style={{ fontSize: 28, marginTop: 28, color: '#62625c', maxWidth: 900, lineHeight: 1.4 }}>
             {t(DATA.bio, lang)}
           </div>
         </div>
